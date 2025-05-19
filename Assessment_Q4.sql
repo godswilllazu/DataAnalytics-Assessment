@@ -33,7 +33,7 @@ SELECT
     -- (transactions per month) * 12 months * average profit per transaction
     -- Profit per transaction is assumed to be 0.1% of transaction value
     ROUND(
-        (x.total_transactions / NULLIF(t.tenure_months, 0)) * 12 * (0.1 * x.avg_txn_value / 100), 2
+        (x.total_transactions / NULLIF(t.tenure_months, 0)) * 12 * (0.001 * x.avg_txn_value / 100), 2
     ) AS estimated_clv
 
 FROM 

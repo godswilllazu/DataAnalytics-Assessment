@@ -8,8 +8,8 @@ SELECT
     -- Count of distinct investment accounts (plans marked as funds)
     COUNT(DISTINCT CASE WHEN p.is_a_fund = 1 THEN s.id END) AS investment_count,
     
-    -- Total amount deposited across all plans for the user (still in kobo)
-    SUM(p.amount) AS total_deposit
+    -- Total amount deposited across all plans for the user ( in naira)
+    SUM(p.amount/100) AS total_deposit
 
 FROM 
     users_customuser u  -- Main users table
