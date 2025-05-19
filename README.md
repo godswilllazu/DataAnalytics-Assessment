@@ -34,10 +34,10 @@ SELECT
 
 ### 3. Summing Total Deposits
 ```sql
-    SUM(p.amount) AS total_deposit
+    SUM(p.amount/100) AS total_deposit
 ```
 - Computes the total amount deposited by the customer across all plans.
-- The `amount` is assumed to be in **kobo**, not naira.
+- The `amount` is assumed to be in **kobo**, not naira, so i converted to naira by dividing by 100 
 
 ---
 
